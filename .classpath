@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="/Users/Benet/Documents/DAM 2/M03 PRO/M03-UF6-POO. Introducció a la persistència en BD-DAM2/NF 6.2 – Diseño de programas para la gestión de bases de datos objeto relacionales (BDOR)/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="Z:/Documents/DAM 2/M03 PRO/M03-UF6-POO. Introducció a la persistència en BD-DAM2/NF 6.2 – Diseño de programas para la gestión de bases de datos objeto relacionales (BDOR)/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//                                ARRAY_
+//
+////////////////////////////////////////////////////////////////////////////////
+create type array_telefonos as varray(3) of varchar2(9);
+//Objeto auxiliar para las direcciones de los clientes
+//drop type "USUARIOPRUEBA"."DIRECCION_T" force;
+create or replace  type direccion_t as object(
+calle varchar(20),
+poblacion varchar(20),
+cod_postal varchar(5),
+provincia varchar(20)
+);
+//Objeto cliente
+create type cliente_t as object(
+cif varchar(9),
+nombre varchar(20),
+apellido varchar(20),
+apellido2 varchar(20),
+direccion direccion_t,
+decuento number(5,2),
+telefonos array_telefonos
+);
+//Tabla de clientes
+create table clientes_table of cliente_t(
+cif primary key
+);
+////////////////////////////////////////////////////////////////////////////////
+//
+//                                 INSERTS
+//
+////////////////////////////////////////////////////////////////////////////////
+//Estructura CLIENTE => CIF,NOMBRE,APE1,APE2,Telefonos[3],Direccion("calle","poblacion","cod_postal","provincia");
+
+insert into clientes_table values ('34343434L','Lluis','Garcia','Perez',
+                                     direccion_t('C las flores 23','Barcelona','08032','Barcelona'),
+                                     0,
+                                     array_telefonos('932222222','677000000','')
+                                   );
+insert into clientes_table values ('78787878L','Ana','Serrano','Alvarez',
+                                    direccion_t('C galiana 6','Barcelona','08032','Barcelona'),
+                                    10,
+                                    array_telefonos('685000000','','')
+                                    );
+insert into clientes_table values ('79797979L','Maria','Serrano','Alvarez',                                  
+                                    direccion_t('C galiana 6','Barcelona','08032','Barcelona'),
+                                    55.55,
+                                    null
+                                  );

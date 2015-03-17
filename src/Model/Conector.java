@@ -11,13 +11,13 @@ public class Conector {
 	
 	private static Conector instancia;
 	private static Connection conexion;
-	
 	private Conector(){
 		
 		try {
 			Class.forName(Constants.DRIVER);//Driver			
-			conexion=DriverManager.getConnection(Constants.IP+Constants.BBDD_NAME,
-												Constants.USER,Constants.PASSWORD);
+			conexion=DriverManager.getConnection(Constants.DRIVER_URL+Constants.IP+Constants.PORT+Constants.NS,
+											     Constants.USER,
+											     Constants.PASSWORD);
 			
 		} catch (ClassNotFoundException e) {			
 			e.printStackTrace();		
@@ -38,7 +38,7 @@ public class Conector {
 	}
 	
 	
-	public Conector getInstancia(){
+	public static Conector getInstancia(){
 		
 		if(instancia==null){
 				instancia=new Conector();
