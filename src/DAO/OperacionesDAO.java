@@ -10,8 +10,8 @@ public interface OperacionesDAO {
 	public oracle.sql.STRUCT select(String cif)throws SQLException;
 	
 	public boolean insert(oracle.sql.STRUCT object)throws SQLException;
-	public boolean updatePhone(String cif, String phone, oracle.sql.STRUCT object)throws SQLException;
-	public boolean updateDiscount(String cif, String discount)throws SQLException;
+	public boolean updatePhones(String cif, oracle.sql.ARRAY telef)throws SQLException;
+	public boolean updateDiscount(String cif, float discount)throws SQLException;
 	
 	
 }
